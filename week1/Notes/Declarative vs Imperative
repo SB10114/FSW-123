@@ -1,0 +1,15 @@
+The term imperative programming (also called procedural) is defined as how you do something and declarative programming (Links to an external site.) (also called functional) is defined as what you do. 
+
+You can use JavaScript both in a declarative or imperative way, as an example would be using a for loop and if statement versus using a built-in string replace (Links to an external site.) method with regex.
+
+An example of imperative programming with JavaScript without React (using browser DOM):
+
+1.jpg  
+
+Now here is an example of declarative programming with React:
+
+3.jpg  
+
+Here, the Welcome component describes the DOM that should be rendered. The render function uses the instructions declared in the component to build the DOM, abstracting away the details of how the DOM is to be rendered. We can clearly see that we want to render our Welcome component into the element with the ID of target.
+
+Declarative programs are easier to read and understand because the code itself describes what is happening. It produces applications that are easier to reason about and when it's reason an application, it makes it easier to scale, which is one of the main reasons React is so popular. 

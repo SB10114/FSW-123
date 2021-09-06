@@ -1,0 +1,19 @@
+In the past, websites consisted of independent HTML pages. When the user navigated these pages, the browser would request and load different HTML documents. The invention of AJAX (Links to an external site.) (Asynchronous JavaScript and XML) brought us the single-page application, or SPA (Links to an external site.).
+
+Since browsers could request and load tiny bits of data using AJAX, entire web applications could now run out of a single page and rely on JavaScript to update the user interface.
+
+In an SPA, the browser initially loads only one HTML document. As users navigate through the site, they actually stay on the same page. JavaScript destroys and creates a new user interface as the user interacts with the application. It may feel as though you’re jumping from page to page, but you’re actually still on the same HTML page, and JavaScript is doing all the heavy lifting.
+
+The DOM API (Links to an external site.)  is a collection of objects that JavaScript can use to interact with the browser to modify the DOM. If you’ve used document.createElement (Links to an external site.) or document.appendChild (Links to an external site.), you’ve worked with the DOM API.
+
+React (Links to an external site.) is a library used to create SPAs that’s designed to update the browser DOM for us. We no longer have to be concerned with the complexities associated with building high-performing applications because React can do that for us. With React, we do not normally interact with the DOM API directly. Instead, we provide instructions for what we want React to build, and React will take care of rendering and reconciling (Links to an external site.) the elements we’ve instructed it to create.
+
+The browser DOM is made up of DOM elements. Similarly, the React DOM (known as the Virtual DOM (Links to an external site.)) is made up of React elements. DOM elements and React elements may look the same, but they’re actually quite different. A React element is a description of what the actual DOM element should look like. In other words, React elements are the instructions for how the browser DOM should be created.
+
+Some key points to remember:
+
+the entire app lives on one HTML page only
+
+instead of static HTML files, JavaScript renders the screen dynamically, therefore, the HTML page that is first downloaded is actually almost entirely empty of content.
+
+all scripts and files needed to run the application are generally downloaded in the beginning, when retrieving the main HTML file (note: for a larger SPAs, it can be different).

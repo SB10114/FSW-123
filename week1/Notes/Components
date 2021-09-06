@@ -1,0 +1,55 @@
+What is a component?
+
+A component is a single part of the user interface and can be reused in multiple places. In general, components are made up of elements like <h1> or <img>, but with specific properties for your application. Although a component can be a single HTML element, it's typically a collection of elements.
+
+A React component can be one of two types. It can be either a function component or an ES6 class component. We will mainly focus using functional components using hooks (Links to an external site.) in this course, but there will be references to class component syntax as well. 
+
+Each component in an application should have a single responsibility. For example, in a web page for a retail site, you may have these components:
+
+A menu bar
+The item listing, with a photo and description of the item
+A review, of which there may be multiple on the page
+Note that you can customize each component for the app that you're working on.
+
+Determining the components
+
+Take a look at the following simple application, which keeps track of what the user needs to buy at the grocery store.
+
+components1.png
+
+There are a number of different pieces that make up this application:
+
+At the top, there is an input box for adding a new item to the list. This is its own component.
+The list is made up of any number of items and a title. The entire list is its own component.
+Each list item is also a component, nested inside of the overall list component. The checkbox and buttons are included in each list item component.
+Here is a visual representation of this, with the three component types highlighted:
+
+components2.png
+
+At the top, highlighted in green, is the input box for adding an item. This is an AddItem component.
+
+Below that, also highlighted in green, is the overall list. This is the GroceryList component. Inside of the GroceryList component are as many Item components as necessary to represent the list.
+
+One of the Item components is highlighted in blue.
+
+The Single Responsibility Principle (SRP)
+
+How should you decide what should be a component? The process is very similar to deciding what should be a function: you use the single responsibility principle (Links to an external site.), which means that each component should have one thing that it does.
+
+Consider what each of the components defined above do:
+
+The AddItem component is responsible for adding items to the list.
+The GroceryList component is responsible for showing a title and all of the items.
+Each Item component is responsible for showing information about the item, including whether it's been checked off or not.
+Often, as an app grows and more functionality is added to the app, components are further broken down into more components.
+
+Component composition
+
+Components can be made up of other components. In this case, the entire application could be an App component that includes the following:
+
+One AddItem component
+One GroceryList component
+Any number of Item components, depending on the number of items in the list
+There is a lot to learn about how to write components with React, but the first step to building any app is determining what components are needed.
+
+Generally, you will want components to be customizable. Components can take arguments called props, which you can use to customize the element. Read through the tabs below.

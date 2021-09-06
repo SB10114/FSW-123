@@ -1,0 +1,60 @@
+To get a React app running on your computer, you need to set up a lot of files besides just the JavaScript files. The easiest way to get a React app set up is by using a script called Create React App (Links to an external site.).
+
+Create React App is a project generator that will create numerous files for you. This process could be onerous on its own, but it's simple with Create React App.
+
+Creating an application
+
+You would normally use npx (Links to an external site.) (instead of npm (Links to an external site.)) to run the create-react-app command because we want to execute the package not install it. The create-react-app command takes a folder name as an argument and will create the folder for you.
+
+The full command will look something like this:
+
+npx create-react-app <folder-name>
+
+Do this - Create a React application
+
+Navigate to a folder that is not a Git repository. Then, run the following command:
+
+npx create-react-app my-first-app
+
+If you inspect the directory, you'll see that a new folder, my-first-app, has been created. From the command line, navigate into that folder.
+
+Running the application
+
+The package.json file inside of the newly created React application comes with a few useful scripts. One of these scripts is the following:
+
+npm start
+
+Once you run the command above, you'll see something like the following output in your terminal.
+
+Compiled successfully!
+
+You can now view getting-started-with-react in the browser.
+
+Local: http://localhost:3000
+On Your Network: http://XX.X.X.XX:3000
+
+This is where your app is hosted on your machine. You will see a spinning blue React logo. This is the default app that Create React App starts with, but you will edit it to be your own.
+
+What's happening on your command line?
+
+Notice that, on the command line, you again don't have access to your command-line prompt. Anything that you type will show up, but you will not be able to run additional commands.
+
+This is because when npm start is run, a package called webpack (Links to an external site.) spins up a server to host your frontend code. This server will keep running so that you can witness changes made to your application while you're working on it. If you need your command line for something else, open a new tab in your terminal application.
+
+If you need to stop the server, you can type Control+C (or Command+C if you're on a Mac).
+
+Do this - Stop and start the server
+
+Try stopping the server by following the method outlined above. Then, restart the server by running npm start. Once you get used to these commands, stopping and starting the server is quite easy.
+
+Note that you shouldn't stop a server by just closing the terminal tab where it's open. This will not always stop the server; sometimes, it will remain running in the background.
+
+Standard files
+
+Create React App includes a few folders and several files (Links to an external site.):
+
+create-react-app-folders.png
+
+The public folder represents what is available to web browsers. Notice that this folder has an index.html file inside of it. You can generally leave this folder alone.
+The src folder is where you will do most of your work. It includes all of the React files that you'll be working on, as well as some images and CSS.
+The files at the root level of this project typically include JavaScript configuration files like a package.json file and a README.md file. Make sure to update the README and describe you project details.  Check out makeareame.com (Links to an external site.) to get more information about the README files.

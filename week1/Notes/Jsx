@@ -1,0 +1,23 @@
+JSX is defined by the React docs  (Links to an external site.)as an "extension to JavaScript" or "syntax sugar for calling React.createElement(component, props, ...children)) ", JSX is what makes writing your React Components easy.
+
+JSX is considered a domain-specific language (Links to an external site.) (DSL), which can look very similar to a template language. 
+
+Here’s an example of its syntax:
+
+const element = <h1>Hello, World!</h1>;
+
+What comes after the equals sign isn't a string or HTML, rather JSX. It doesn't render out to HTML directly but instead renders to React Classes that are consumed by the Virtual DOM (Links to an external site.). Eventually, through the mysterious magic of the Virtual DOM, it will make its way to the page and be rendered out to HTML.
+
+JSX is still just JavaScript with some extra functionality. With JSX, you can write code that looks very similar to HTML or XML, but you have the power of seamlessly mixing JavaScript methods and variables into your code. JSX is interpreted by a transpiler, such as Babel (Links to an external site.), and rendered to JavaScript code that the React can understand.
+
+
+Note how the <h1> element is used directly inside regular JavaScript. There are no quotes around it, since it’s not a string, but a javascript expression.
+
+Use variables
+
+You can use easily use variables inside JSX. The JavaScript variable name is used inside the JSX element, so it needs to wrapped with curly brackets:
+
+
+Use functions
+
+Similarly, you can invoke functions inside JSX which would also be wrapped in curly brackets:
