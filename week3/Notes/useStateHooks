@@ -1,0 +1,23 @@
+React Hooks (Links to an external site.) are based on the same fundamental principles as React. Hooks were added in React 16.8 (Links to an external site.), and they allow us to use state, and various other React features, without writing a class.
+
+The useState() hook
+
+In order to create and edit state, which can allow you to change the interface, you need to use the useState() (Links to an external site.) hook. A hook is a special React function that gives you access to (or hooks into) some React process. So useState() hooks into the component's state. 
+
+To use the useState() hook, you will first need to add it to your import statement:
+
+import-hooks.png
+
+Now inside your component, you call useState(). The code below creates a new state variable called searchTerm.
+
+The useState() function takes the initial value of the state variable (in this case, an empty string). It returns the variable, searchTerm. It also returns a function, setSearchTerm(), that is used to update the state variable.
+
+Note that the useState hook requires an initial value, (i.e. empty string, array, object or 0).
+
+The convention for creating a state variable with useState() is to name the function set[VariableName]. So if the variable is userId, the function will be setUserId().
+
+hooks2-1.png
+
+hooks3.png
+
+Right now, as you type into the input field it will dynamically update the text inside the paragraph tag after 'Searching for' is hard-coded. Whenever state is updated, the component re-renders using the new information. This means, the entire component gets called again including all of the code inside of the component function.

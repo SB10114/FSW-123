@@ -1,0 +1,5 @@
+When the user presses a button, you will usually want to store some information in the state. For example, when you submit a post on a social media site, that post might be saved in state itself.
+
+You might think that you can store this information in the props. Components are pure functions. This means that they should never edit the props. If the props need to change, they are edited by the parent component.
+
+State, on the other hand, is where the component stores information that it can modify. Parent components do not have access to the state of their child components.

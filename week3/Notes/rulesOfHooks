@@ -1,0 +1,8 @@
+There is  one main rule  (Links to an external site.) you have to follow when using Hooks and it has to do with where Hooks can be called.
+
+Only call Hooks from the top-level of a function component
+
+Don't call hooks inside loops, conditions or nested functions.
+You can only call them from inside a functional component.
+The hook definitions must be defined at the very top of the component.
+That also means you can’t call them from a normal function or a class component.

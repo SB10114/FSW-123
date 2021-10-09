@@ -1,0 +1,12 @@
+What is state?
+React props are used to pass information down the component tree; React state is used to make applications interactive. 
+
+React's main job is to take your application's state and turn it into DOM nodes.
+
+Generally, when a user presses a button or enters data in a form, you will want to store some information. React components use state to store information that is updated by the component. State refers to data that affects how an application behaves and is rendered.
+
+For example, if you're logged into an application, the state of that application is different than when you are not logged in. So based on the state of the application, certain functionalities may be available to you.
+
+Every React component can have its own local state.
+
+In the case of SPAs, state is a data structure containing information describing the application at any given point in time. This is an example of UI state. There are other types of state such as Global state (which we will talk about later). But for right now, we are just concerned with the state of our UI (user interface) as described by the components we have built.
