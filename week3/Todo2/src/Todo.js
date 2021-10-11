@@ -1,8 +1,5 @@
 
 function Todo(props) {
-
-    //console.log(props)
-
     return (
         <div>
            <input type = "checkbox"
