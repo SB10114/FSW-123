@@ -1,0 +1,70 @@
+You can use any kind of data type as the argument in your useState() function. However, mutable data types like objects and arrays may not work exactly the way that you expect.
+
+The function returned from useState() expects a new value to be placed inside of the function. That means that you'll need to create a new array or object each time.
+
+To start, we have created a CoinTossCounter component:
+
+Screenshot 2021-03-14 at 5.31.57 PM.png  
+
+Array as state
+
+To keep track of the results for your coin-toss application, it makes sense to use an array. That way, you can end up with something like the following as your state's value.
+
+["H", "T", "H", "H"]
+
+To do this, you can create a state object with a default value of an empty array, like this:
+Screenshot 2021-03-14 at 5.44.45 PM.png
+
+Now, you can fill in the handleClick() function. The results state is an array, which is a mutable object in JavaScript. However, keep in mind that you never want to edit the state directly. Because the state is updated asynchronously, directly editing it may not have the expected results.
+
+Instead, create a new results array that has all the old contents as well as the new value at the end. Then, pass this array to the setResults() function, as follows:
+
+Screenshot 2021-03-14 at 5.46.53 PM.png
+
+The above code uses the spread operator ... to include all of the contents of the existing results variable and add the new value to the very end.
+
+To complete the update to the component, we create an element to render the stored results in a list conditionally rendering either "Heads" for "H" or "Tails" for "T".
+
+Screenshot 2021-03-14 at 5.55.05 PM.png   
+
+Screenshot 2021-03-14 at 5.57.15 PM.png
+
+Object as state
+
+Storing state inside of objects works very similarly. Each time that you make a change to the state, you will need to return a new object with its old contents. Once again, the spread operator (Links to an external site.) is crucial for writing readable code.
+
+Immutable objects
+
+With objects, React state needs immutable objects every time. When setState is executed, React will compare the previous state with the new state and determine if there is a change. If you mutate an object or array to replace an existing one, the reference in memory will still be the same even if the values in the object or array have changed so React will not change the state. This is why you need to give setState a new object or array each time. 
+
+Imagine that you also want to keep track of the number of heads and tails. Although you can do this by searching through the array, it can be more efficient to store these numbers as an object.
+
+After getting two heads and one tails, the object should look like this:
+
+{
+  H: 2,
+  T: 1
+}
+
+First, you'll need to create a new state object, like this:
+
+Screenshot 2021-03-14 at 6.06.11 PM.png
+
+
+Then, you can update the counts state in the handleClick() function:
+
+Screenshot 2021-03-14 at 6.09.15 PM.png    
+
+ 
+
+The object passed in as an argument in the above setCounts() function works as follows:
+
+Create a new object.
+Include all the key-value pairs inside of counts, which should include only the H key and the T key.
+Create a new key for the given value. This will overwrite either H or T.
+Set that new key's value to the current value plus 1.
+To complete the update to the component, we can remove the const lis which renders the results of the user clicking either button and replace it with adding the JSX to display the state of our counts variable instead:
+
+Screenshot 2021-03-14 at 6.24.48 PM.png  
+
+Screenshot 2021-03-14 at 6.28.10 PM.png  

@@ -1,0 +1,21 @@
+As we learned previously, in a controlled form, you let React fully "control" the element by setting and updating the input value directly. A controlled form is what you will normally use in creating forms in component. A component that contains a controlled form is called a controlled component.
+
+Reviewing the code below, the following is true:
+
+The handleNameChange() event is called every time that any change is present in the name input field
+event.target.value references the current contents of the input field.
+The value attribute of the input field is tied to the name and email state variables.
+The values of the name and email state variables are conditionally rendered underneath the form.
+As changes are made to the name and email input field, the onChange event is fired and causes the event handler functions to update the state variables.
+
+When the form is submitted, the submission event is captured and the handleSubmit handler is invoked and just clears the input field values. 
+
+Having a controlled form inside a component, makes that component a controlled component (Links to an external site.).
+
+You can build complex forms that makes use of checkboxes, radio buttons, and other input types with functionality for validation, data processing, and much more.
+
+Screenshot 2021-03-16 at 2.44.06 PM.png
+
+Screenshot 2021-03-16 at 2.44.34 PM.png    
+
+As your form increases in complexity, developers eventually use form component libraries such as react-hook-form (Links to an external site.), formik (Links to an external site.), react-final-form (Links to an external site.), etc.

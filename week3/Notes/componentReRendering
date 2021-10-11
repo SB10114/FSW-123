@@ -1,0 +1,9 @@
+React schedules a render every time the state of a component changes. This means the entire component gets called again, including all of the code inside of the component function.
+
+This is an important concept in React. When the props or state change for a component, that component and its children are re-rendered with the new information. This allows changes to flow downward.
+
+Data flows from parent components down to the child components, making changes as needed. This is generally known as one-way data flow. One-way data flow, refers to the idea that changes in the props or state will cascade downward to effect changes further on. In other words, the parent component's data is the single source of truth for how that component and its children should render.
+
+Never edit the state directly
+
+To update the state and cause the component to re-render, you will always need to use the function provided by useState(). Setting the state directly will not do this.

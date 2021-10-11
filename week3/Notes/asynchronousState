@@ -1,0 +1,30 @@
+Asynchronous State
+Updating state is a process that happens asynchronously (Links to an external site.) . And just like with other asynchronous operations in JavaScript, some odd bugs can occur, depending on what you're attempting to do.
+
+This simple app adds 1 to the existing state count variable and then re-renders the component with the new value.
+
+Screenshot 2021-03-18 at 12.10.57 AM.png  
+
+Screenshot 2021-03-18 at 12.11.08 AM.png  
+
+But what if you make multiple changes to the same state at the same time?
+
+If we update our code and call setCount twice, what will happen?
+
+Screenshot 2021-03-18 at 12.18.35 AM.png
+
+If you try this locally, you'll notice that despite setCount() being called twice, the count only increases by 1.  
+
+This is because the updates to the state are done asynchronously,  so when setCount() is called twice in a row, both calls use the same initial value for count.
+
+When you press the button, the first call to setCount() sees the count as 0 and updates it to 1. Then, the second call to setCount() also sees the count as 0 and also updates it to 1.
+
+Passing a function for state updates
+
+A way to solve this issue, is to pass setCount() a function that takes the previous value of the state, as follows:
+
+Screenshot 2021-03-18 at 12.28.16 AM.png
+
+Using a function means avoiding potential race conditions. A race condition (Links to an external site.) is when two asynchronous processes both are updating the same value. This is more relevant use case in using the useEffect hook (Links to an external site.) (covered later), but it is good to mention it here. 
+
+Instead of taking the value of count, which is subject to change, the function will ensure that whatever the most recent value is, it will add 1 to it.

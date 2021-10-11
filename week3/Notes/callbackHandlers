@@ -1,0 +1,14 @@
+We know that parents communicate data to children through props. Because props are read-only (immutable), child props need some way to communicate events to parents. The parents could then make whatever data changes might be necessary. We can pass down functions as props too. 
+
+There is no way to pass information as JavaScript data types up the component tree, since props are only passed downwards. These functions are called callback handlers. 
+
+A callback function gets declared in the parent component, is used in a child component, but "calls back" to the component it was declared:
+
+callback handler function.png
+
+
+In the code above, the handler function handleSearch defined in App is passed as a prop to Search.  In the Search component, handleSearch is referenced as onSearch and now is a callback handler function 
+
+When props.onSearch(event) is executed, it will now be able to communicate to App by executing the definition of handleSearch and will console log event.target.value.
+
+So when a handler function (handleSearch) used in one function becomes a callback handler, which is passed down to components via props. The callback handler passed as a function in props can now be used to communicate up the component hierarchy tree.

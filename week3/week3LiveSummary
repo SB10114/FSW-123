@@ -1,0 +1,35 @@
+-You started by talking about state
+    -what it is
+    -how it works
+    -how hooks work with it
+    -how to write it
+
+-Next you talked about hooks
+    -what they are
+    -how they work
+    -how to write them
+    -why we need them
+    -useState() hook
+        -how to use it
+        -why you would use it
+    -rules of hooks
+
+-Then you went on to talk about "lifting hooks"
+    -what it is
+    -where to use it
+    -when to use it
+    -why you would want to use it
+
+-You talked about how the code we learned for React previously is not changing, but the placement of said code is changing in order to make the app run more fluidly.
+    -we no longer need to mess with DOM code
+    -we can use state and pass it through props instead
+        -you gave us an example of this
+
+-You talked about Asynchronous state
+    -what it is and why it's necessary
+
+-You showed us an example of how to use all of this together and how to navigate these things in the components tab.
+
+-Then you went over the assignments for week 3 and 4.
+
+

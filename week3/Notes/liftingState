@@ -1,0 +1,15 @@
+A common question from people learning React is how to share state between two sibling components.
+
+The answer is to lift the state (Links to an external site.) which basically amounts to finding the lowest common parent shared between the two components and placing the state data there, and then passing the state and a mechanism (i.e. functions) for updating that state down into the components that need it.
+
+In the diagram below, you have three components, App, Search and List. If you have state defined in Search component, such as a list of items, how would you give the List component access to that state variable? Since sibling components (Search and List) cannot share state because there is no way to pass props "sideways", as data only flows in one direction in React. Likewise, a child component cannot share state with its parent because props cannot be passed up.
+
+So for Search and List components to have access to the same state data, the App component must hold state and pass it to both child components through props. This would involve creating a callback handler (i.e. function) in the App component to update the state if the child component(s) need to change it. These function(s) can be passed down as a prop to the Search and List component.
+
+ 
+
+  lift-state-diagram.png     
+
+ 
+
+This concept is generally referred to as lifting up state. State moves from a child component "higher" up the component tree. With state higher up in a the tree, the data can flow downward more easily.
