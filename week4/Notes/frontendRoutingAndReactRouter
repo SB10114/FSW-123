@@ -1,0 +1,91 @@
+So far, you haven't had to think about updating the URL in the browser when different components are displayed on the screen. Everything has been displayed on the same URL. As a result, there hasn't been a way to use the browser's built-in Back button to go back to previous views, or the Forward button to go forward again after having gone back.
+
+With modern React applications, visitors expect to be able to use the browser's Back and Forward buttons. They also expect to be able to bookmark a page so that they can come back to it later. They expect to be able to copy the URL to share the same page content with a friend. If the URL in the browser doesn't change when the content changes, none of these things will work.
+
+What is routing?
+
+Routing is the process of keeping the browser URL in sync with what's displayed on the page. Routing is key to all websites, and it comes into play whenever you use a URL in your application. URL links using the <a> tag are the standard way of navigating the web.
+
+A traditional website uses backend routing, where every page or route sends a request to the server for an HTML file. Every page requires the browser to download a new HTML file from the server, parse it, download any new scripts or images, and then render it on the screen. With backend routing, the server handles almost everything that the visitor does.
+
+In contrast, frontend routing happens in the browser. In a single-page application (SPA), like those built with React, there is no request to the server for every page that you visit. The frontend router tells the application to redraw part of the page, without telling the server.
+
+This results in a page that is faster and that feels more like a native application. With frontend routing, the browser only sends a request to the server when necessary
+
+XXXXXXXX
+
+React Router (Links to an external site.) is a library that lets us render different components depending on the URL's path. It allows us to synchronize our application to the current path of our webpage. 
+
+Some of the features that React Router offers:
+
+Can programmatically change the /path of our page in the browser address bar without the need for a complete page load. It's a state change, not a different webpage.
+Integrates with the browser so that the "back" and "forward" buttons will work seamlessly.
+It is driven by React Components, this is "idiomatic" to React developers; using components instead of configurations.
+Allows for sophisticated routing compositions, for example, dynamic and nested routes.
+Using react router
+
+First you need to install this external library on the command line in the root directory of your application:
+
+npm install react-router-dom
+
+Once react-router-dom is installed, you can wire up the React Router in your application.
+
+Either in index.js or in App.js, you import the BrowserRouter component from 'react-router-dom' and wrap it around your entire app.
+
+
+
+The BrowserRouter (Links to an external site.) component allows React Router to pass the app's routing information down to any child component it needs (via Context).
+
+If you look inside the React Developer Tools, there is a new component shown, <Router />. Even though we only added BrowserRouter, this results in two components being rendered: <BrowserRouter><Router><App/></Router></BrowserRouter>, the Router came for free.
+
+
+Click on the Router component instance in the React Developer Tools to look at its state and props. The interesting data here is the history props (Links to an external site.) and location state (Links to an external site.). Research the docs to learn more.
+
+Since React Router uses the Context API (Links to an external site.) (manages state) under-the-hood, which is why you see "Router.Provider".  
+
+Screenshot 2021-03-16 at 9.28.03 PM.png
+
+Creating routes and navigating 
+
+The <Route> component (Links to an external site.) renders some UI (i.e. component) when its path matches the current URL. Wrapping a component with <Route> is similar to wrapping an if statement. If the URL matches the path property of the route, the component will be rendered. 
+
+The path property of the route can be a URL path (like / or /about) or any array of URL paths (like ['/products','/contact', ...]).
+
+Note, a route without a path always matches.
+
+Now we can add routes to the component:
+
+
+But if you enter /about in the address bar it will render both the Home and About component. 
+
+What happened?
+
+
+By default, if the URL matches the beginning of the path, it is considered a match. So in this case, a URL of /about matches the path / and the path /about. 
+
+The <Route> component has an exact property that when set to true means that the URL path must exactly match the route path. You can make use of the <Switch> component and the exact property to fix these issues. 
+
+<Switch> component
+
+The <Switch> component (Links to an external site.) will render one of its child <Route> components. It will render only the first <Route> component that has a match as it checks the path of its child <Route> components in order.
+
+
+<Link> component
+
+The <Link> component (Links to an external site.) provides declarative navigation around your application. You cannot use plain <a> anchor tags, as they will reload your browser, which you do not want in a SPA.
+
+Note, the <Link> components must be used outside the <Switch> component.
+
+
+
+Unknown routes
+
+Since the <Switch> matches the first child route in the order as they appear, if you want to define a "Not Found" page, you can put the route at the end with a path = "*" which will always match.
+
+
+
+So now if the user tries to navigate to a URL that does not exist within the application they will get a No Match page. Note that you should give the user more information and suggestions to navigate to other locations. 
+
+Since the <Switch> only finds the first child route that matches you could omit the path ="*" and it would still work as long as you put that route as the last route.
+
+  

@@ -1,0 +1,20 @@
+Web applications normally needs to extract some information from the browser's URL. The parts of the URL that are variable and need to be extracted are called URL parameters or params.
+
+You may want to build a component that displays different data for different URLs. 
+
+For example, you could build a component to display a particular product from a list of products.
+
+Given the URL http://localhost:3000/product/10 how would you extract the 10 (representing a product ID) to fetch the correct product data? You can use a URL parameter.
+
+URL parameters
+
+A URL parameter is a placeholder in the URL that begins with a colon :. To indicate that part of a route is a parameter, you define the path with a _parameter token_; so it needs to precede it with a colon and give it a meaningful name.
+
+This allows a route to render the same component while passing the dynamic portion of the URL to that component. That way, the component can change what it renders based on the parameter.
+
+useParams hook
+
+As of React Router 5, hooks were added (Links to an external site.) to simplify the use of routing patterns. The useParams() hook (Links to an external site.) returns an object of key-value pairs of route parameters. You can use it to reference the params of the current <Route>. 
+
+
+Importing the hook useParams allows us to access the dynamic portion of the URL, in this case account. The account variable will hold the dynamic data in the URL which would be either netflix, zillow-group, yahoo or modus-create.

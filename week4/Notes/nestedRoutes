@@ -1,0 +1,26 @@
+Sometimes, as the visitor navigates through the site, you want to change only a small part of the screen, not the entire page.  Nested routes (Links to an external site.), or child routes, display more than one component on the screen at a time.
+
+Nested routes are routes displayed inside of another route. This means that there can be more routes inside a component that is rendered by another route.
+
+A useful hook working with nested routes is useRouteMatch() (Links to an external site.). This is useful anytime that you need to get information about the closest matching <Route> in the tree.  
+
+In the example below, when we click on the Posts link, only the bottom part of the screen is changing. The top links of Home and Posts do not change, neither do the links underneath (Post 1, Post 2, Post 3).  This is an example of nested routes. 
+ 
+
+In <App/>, we define the / and /posts routes.
+
+
+In <Posts/>, we define the nested routes. The useRouteMatch() hook returns the url of the route which is /posts defined in <App/>. The paths for the nested routes is also returning /posts as well in this example.
+
+So each Link would resolve to /posts/post1, etc.  The default path of "/posts is just rendering an <h3>Select a blog post</h3> instead of another component.
+
+
+
+If you look at the React Dev Tools for the Posts route under the hooks section and then under Context, you can see the path and url values.
+
+
+Then select an individual <Link/>, and notice the children and to props that match.
+
+
+In <Post />, the useParams() hook is returning the URL parameter of postId which was defined in <Posts /> as path = {`${path}/:postId`}>   
+

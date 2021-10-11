@@ -1,0 +1,24 @@
+Like all software projects, React projects tend to get larger and more complex over time. The more files you have in the project, the more important it becomes to organize those files in a way that makes it easy to do the following:
+
+Find and modify existing code
+Add new code in a location consistent with the existing code
+
+This is where you start.
+
+From here, you have complete freedom to organize your source files however you like as long as you keep the files in the designated src folder. 
+
+Bear in mind that keeping all of your components in the src folder will get overwhelming, even for small applications. There are no rules about how to organize your code. Simply do what makes sense for you. Though there are some common patterns (Links to an external site.) that are very popular in the React ecosystem you may want to consider.
+
+Group by file type
+
+As the project grows in size, the number of files in the components folder can get overwhelming. As a result, the components folder will often have nested folders that group the components in some way. Usually, the components are grouped by route, feature, or role in the application.
+
+Some developers have even abandoned the components folder entirely; they only group the components by route, feature, or role.
+
+Group by route
+
+Another common project structure is to locate CSS, JavaScript, images, and tests together inside folders grouped by route. Grouping by route means that anything displayed on the page for a given route is in a folder with the same name as the route.
+
+Group by feature
+
+You can also group components by feature. Unfortunately, the definition of a feature is not universal, and it is up to you to determine what a feature is.
