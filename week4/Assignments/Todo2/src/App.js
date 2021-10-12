@@ -1,7 +1,9 @@
 import './App.css';
 import {listoftodos} from './Store.js'
 import TodoList from './TodoList';
+import TodoForm from './TodoForm'
 import {useState} from "react"
+import {v4 as uuidv4} from 'uuid'
 
 function App() {
   const [todos, setTodos] = useState(listoftodos)
@@ -21,10 +23,15 @@ function App() {
   }
 
   const addTodo = text => {
-    var tempTodos = [...todos]
-    var createNew = tempTodos.add((item) => item.id)
+    var newTodo = {
+      id: uuidv4(),
+      isCompleted: false,
+      text: text
+    }
+    var tempTodos = [...todos, newTodo]
+    //var createNew = tempTodos.text((item) => item.id)
 
-    setTodos(createNew)
+    setTodos(tempTodos)
   }
 
     return (
@@ -33,7 +40,8 @@ function App() {
             <TodoList list = {todos}
              completeTodo = {completeTodo}
              deleteTodo = {deleteTodo}
-             addTodo = {addTodo}/>
+             />
+             <TodoForm addTodo = {addTodo} />
         </div>
    </div>
     );
