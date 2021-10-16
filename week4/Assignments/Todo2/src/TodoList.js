@@ -8,7 +8,7 @@ function TodoList(props) {
                 todo = {item}
                 completeTodo = {props.completeTodo}
                 deleteTodo = {props.deleteTodo}
-                addTodo = {props.addTodo} />
+                />
     })
 
     return (
@@ -20,3 +20,5 @@ function TodoList(props) {
 
 
 export default TodoList;
+
+//addTodo = {props.addTodo}
