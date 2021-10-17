@@ -14,6 +14,15 @@ function Todo({todo, completeTodo, deleteTodo, editTodo}) {
         setError(false)
     }
 
+    const handleEdit = (e) => {
+        setText(e.target.value)
+    }
+
+    const handleUpdate = (id, text) => {
+        editTodo(id, text)
+        editSwitch()
+    }
+
     return (
     <li>
         <>
@@ -30,8 +39,8 @@ function Todo({todo, completeTodo, deleteTodo, editTodo}) {
             </>
         ) : (
             <>
-            <input type = 'text' value = {text} onChange = {editSwitch} />
-            <button disbled = {error} onClick = {() => editTodo(todo.id, text)}>Update</button>
+            <input type = 'text' value = {text} onChange = {handleEdit} />
+            <button disabled = {error} onClick = {() => handleUpdate(todo.id, text)}>Update</button>
             <button onClick = {() => editSwitch()}>Cancel</button> 
             </>
 

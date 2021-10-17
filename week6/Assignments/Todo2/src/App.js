@@ -45,6 +45,7 @@ function App() {
         <>
           <h2>Todo App</h2>
           <h4>Add new todos:</h4>
+          <TodoForm addTodo = {addTodo} />
             <>
             <TodoList 
              todos = {todos}
@@ -52,7 +53,7 @@ function App() {
              deleteTodo = {deleteTodo}
              editTodo = {editTodo}
              />
-             <TodoForm addTodo = {addTodo} />
+             
         </>
    </>
     );
