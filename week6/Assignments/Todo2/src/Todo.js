@@ -17,7 +17,7 @@ function Todo({todo, completeTodo, deleteTodo, editTodo}) {
     const handleEdit = (e) => {
         setText(e.target.value)
     }
-
+0
     const handleUpdate = (id, text) => {
         editTodo(id, text)
         editSwitch()
