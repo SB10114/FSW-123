@@ -7,18 +7,18 @@
 import Buttons from "./Buttons";
 
 function SongsRender(songs, deleteSongs) {
-    const songsList = songs.map((button) => {
-      return <Buttons 
-                key = {button.id}
-                button = {button}
-                deleteSongs = {deleteSongs}
-                />
-    })
+    // const songsList = songs.map((button) => {
+    //   return <Buttons 
+    //             key = {button.id}
+    //             button = {button}
+    //             deleteSongs = {deleteSongs}
+    //             />
+    // })
     
     
     return (
     <>
-      {songsList}
+      
     </>
     )
 }

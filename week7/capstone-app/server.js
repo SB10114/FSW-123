@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const PORT = 9000
 
-const songsRouter = require('./src/Routes/songsRouter')
+const songsRouter = require('./src/Routes/SongsRouter')
 
 app.use(express.json())
 

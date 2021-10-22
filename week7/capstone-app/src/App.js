@@ -1,9 +1,10 @@
 import {useState} from 'react'
-//import { BrowserRouter as Router} from 'react-router-dom';
+//import { } from 'react-router-dom';
 import {v4 as uuidv4} from 'uuid'
-import currentSongs from './Routes/songsRouter';
+import {currentSongs} from './Routes/SongsRouter';
 import Footer from './components/FooterElement';
-import SongsRender from './components/SongsList';
+import { NavLink } from 'react-router-dom';
+import NavBar from './components/NavBar';
 // import NavBar from './components/NavBar';
 // import HomeGreeting from './components/Home';
 // import Details from './components/Details';
@@ -34,17 +35,22 @@ function App() {
   }
 
     return (
-    <>
-      <SongsRender 
-        songs = {songs}
-        deleteSongs = {deleteSongs}
-        addSongs = {addSongs}
-        />
-      <Footer />
-    </>
+      <div>
+        <>
+          <Footer />
+        </>
+        <>
+        <NavBar  />
+        </>
+    </div>
     )
 }
 
 export default App;
 
 
+{/* <SongsRender 
+        songs = {songs}
+        deleteSongs = {deleteSongs}
+        addSongs = {addSongs}
+        /> */}

@@ -1,8 +1,7 @@
-const express = require('express')
-const songsRouter = express.Router()
-const {v4: uuidv4} = require('uuid')
+import {v4 as uuidv4} from 'uuid'
 
-const currentSongs = [
+
+export const currentSongs = [
     {
         title: "Rhiannon",
         artist: 'Fleetwood Mac',
@@ -29,19 +28,4 @@ const currentSongs = [
       }
 ]
 
-songsRouter
-  .post('/', (req, res) => {
-    const newSong = req.body
-    newSong._id = uuidv4()
-    currentSongs.push(newSong)
 
-    res.send(`Successfully added new Song to your playlist`)
-  })
-
-  //.delete()
-
-  
-
-
-
-module.exports = songsRouter;
